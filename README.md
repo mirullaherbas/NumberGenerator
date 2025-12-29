@@ -61,22 +61,22 @@ Sistem, rastgeleliği artırmak için çok katmanlı bir mimari kullanır:
 
 ```mermaid
 graph TD
-    Start[🚀 Başlat] --> Seed[🔐 Güvenli Seed (CSPRNG + Time)]
-    Seed --> Loop{Döngü}
+    Start["🚀 Başlat"] --> Seed["🔐 Güvenli Seed (CSPRNG + Time)"]
+    Seed --> Loop{"Döngü"}
     
     subgraph "Kaotik & Kriptografik Katmanlar"
-        Loop --> Collatz[📉 Collatz Dönüşümü (3n+1 veya n/2)]
-        Collatz --> SBox[📦 AES S-Box Karıştırma]
-        SBox --> SHA[🔑 SHA-256 Hash & XOR]
+        Loop --> Collatz["📉 Collatz Dönüşümü (3n+1 veya n/2)"]
+        Collatz --> SBox["📦 AES S-Box Karıştırma"]
+        SBox --> SHA["🔑 SHA-256 Hash & XOR"]
     end
     
-    SHA --> Extract[Bit Çıkarımı]
-    Extract --> Check{Yeterli Bit?}
+    SHA --> Extract["Bit Çıkarımı"]
+    Extract --> Check{"Yeterli Bit?"}
     Check -- Hayır --> Loop
-    Check -- Evet --> Balance[⚖️ Dengeleme Algoritması]
+    Check -- Evet --> Balance["⚖️ Dengeleme Algoritması"]
     
-    Balance --> Analyze[📈 İstatistiksel Analiz]
-    Analyze --> Report[📄 Raporlama & Görseller]
+    Balance --> Analyze["📈 İstatistiksel Analiz"]
+    Analyze --> Report["📄 Raporlama & Görseller"]
 ```
 
 ---
